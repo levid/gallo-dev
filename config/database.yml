@@ -35,7 +35,7 @@ staging:
   host: localhost
 
 production:
-  adapter: activerecord-mysql-adapter
+  adapter: mysql2
   database: gallo
   username: root
   password: $rdc#isaacw

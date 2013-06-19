@@ -10,7 +10,7 @@ ruby '1.9.3'
 gem 'nifty-generators'
 
 group :production do
-  gem 'activerecord-mysql-adapter'
+  gem 'activerecord-mysql2-adapter'
 end
 
 group :development, :test do
