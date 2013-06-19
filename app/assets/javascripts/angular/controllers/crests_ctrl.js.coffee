@@ -35,6 +35,10 @@ layer = new Kinetic.Layer()
 
 window.generateKineticSVG = (text) =>
 
+  $('.kineticjs-content').show()
+  $('#crestImage').show()
+  $(".hidden-container").hide()
+
   textpath = new Kinetic.TextPath(
     x: 0
     y: 0
@@ -74,7 +78,7 @@ $("form#title-form input[type=submit]").on 'click', (e) =>
       ).done (data) ->
         $('.kineticjs-content').hide()
         $('#crestImage').hide()
-        $(".hidden-container").html(data)
+        $(".hidden-container").show().html(data)
   )
 
 
