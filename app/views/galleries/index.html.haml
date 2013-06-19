@@ -1,0 +1,12 @@
+- title "Galleries"
+
+- for gallery in @galleries
+  .gallery
+    %h2= link_to gallery.name, gallery
+    Crests: #{gallery.crests.size}
+
+    .actions
+      = link_to "Show", gallery
+      = link_to "Edit", edit_gallery_path(gallery)
+      = link_to "Destroy", gallery, :confirm => 'Are you sure?', :method => :delete
+%p= link_to "New Gallery", new_gallery_path

@@ -1,0 +1,30 @@
+- title "Crests"
+%table
+  %tr
+    %th Name
+  - for crest in @crests
+    %tr
+      %td= crest.name
+      %td= image_tag crest.image_url(:thumb) if crest.image?
+      %td= link_to "Show", crest
+      %td= link_to "Edit", edit_crest_path(crest)
+      %td= link_to "Destroy", crest, :confirm => 'Are you sure?', :method => :delete
+%p= link_to "New Crest", new_crest_path
+
+%div
+  %form#title-form
+    %label{:for => "title"}
+      %h1 Title:
+    %input#title{:type => "text", :name => "title", :placeholder => "Enter a title"}
+    %br/
+    %input#puzzle{:type => "checkbox", :value => "puzzlize"} Puzzlize It?
+    %input{:type => "Submit", :value => "Submit"}
+
+  %svg{:xmlns => "http://www.w3.org/2000/svg", :version => "1.1", :width => "100", :height => "100"}
+    %circle{:cx => "100", :cy => "50",  :r => "40",  :stroke => "black", :"stroke-width" => "2", :fill => "red"}
+
+  .hidden-container
+
+
+
+  %canvas#cvs{:width => "1280", :height => "1280", :style => 'display: none;'}

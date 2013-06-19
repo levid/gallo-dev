@@ -1,0 +1,4 @@
+-if temp_image
+  = image_tag "/#{temp_image}"
+-else
+  = image_tag url_for(:controller => "crests", :action => "generate", :puzzlize => puzzlize, :rows => 6, :cols => 6, :crest_id => crest_id)

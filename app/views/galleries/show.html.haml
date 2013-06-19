@@ -1,0 +1,16 @@
+- title @gallery.name
+#crests
+  - for crest in @gallery.crests
+    .crest
+      = image_tag crest.image_url(:thumb) if crest.image?
+      .name= crest.name
+      .actions
+        = link_to "edit", edit_crest_path(crest)
+        |
+        \#{link_to "remove", crest, :confirm => 'Are you sure?', :method => :delete}
+  .clear
+%p
+  = link_to "Add a Crest", new_crest_path(:gallery_id => @gallery)
+  |
+  \#{link_to "Remove Gallery", @gallery, :confirm => 'Are you sure?', :method => :delete} |
+  \#{link_to "View Galleries", galleries_path}

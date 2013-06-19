@@ -1,0 +1,90 @@
+
+
+h1{
+  font: 30px 'Bree Serif';
+}
+
+.bree{
+  margin:  0px;
+  display: block;
+  top:  0px;
+  font: 20px 'Bree Serif';
+  color:  black;
+  // text-shadow: 3px 3px 0px rgba(0,0,0,0.4);
+  letter-spacing: 2px;
+}
+
+.box{
+  background-color: transparent;
+  margin:  10px;
+  display:  inline-block;
+  visibility:  hidden;
+}
+
+.box{visibility: visible;}
+
+
+body {
+  font-size: 12px;
+  font-family: Helvetica, sans-serif;
+  background-color: #ddd;
+  margin: 0px;
+}
+
+.center {text-align: center;}
+
+header {
+  background-color: #4F4F4F;
+  color: #fff;
+  position: absolute;
+  height: 36px;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 18px;
+  line-height: 36px;
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+#myText {
+  position: absolute;
+  left: -500px;
+}
+
+#crestImage {
+  position: absolute;
+  top: -60px;
+  left: 0px;
+}
+
+#crestText {
+  visibility: visible;
+  position: relative;
+  top: 100px;
+  width: 300px;
+  height: 300px;
+  z-index: 5;
+}
+
+#crest {
+  width: auto;
+  height: auto;
+  display: inline-block;
+  transform: scale(0.5);
+  -ms-transform: scale(0.5); /* IE 9 */
+  -webkit-transform: scale(0.5); /* Safari and Chrome */
+}
+
+.hidden-container {
+  left: 0px;
+  position: absolute;
+}
+
+.kineticjs-content {
+  top: -225px;
+  left: -125px;
+  transform: scale(0.5);
+  -ms-transform: scale(0.5); /* IE 9 */
+  -webkit-transform: scale(0.5); /* Safari and Chrome */
+}

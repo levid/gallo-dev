@@ -1,0 +1,42 @@
+%div{:"ng-controller" => "CrestsCtrl"}
+  %form#title-form
+    %label Title:
+
+    %input#myText{:"data-ng-model" => "myText", :placeholder => "Enter a name here", :type => "text"}/
+    %input{:"data-ng-model" => "myText", :placeholder => "Enter a name here", :type => "text"}/
+    / %input#puzzle{:type => "checkbox", :value => "puzzlize"} Puzzlize It?
+    %input{:type => "Submit", :value => "Generate Crest"}
+
+    %hr/
+
+    / %h2{:"ng:bind" => "myText"} test
+    / %div{:"crest-text" => '', :"data-my-text" => "myText"}
+
+    #crest
+      / #crestText.bree.box.normal{:"crest-text" => '', :"data-my-text" => "myText"} {{yourName}}
+
+      #text.hide{:"crest-text" => '', :"data-my-text" => "myText"}
+
+      #crestImage
+        %img{:src => '/crests/crest_01.png'}
+
+    / #newImage
+    /   %img{:src => ''}
+
+  .hidden-container
+    / %h2.bree.box.normalinside No alignment, text inside
+    / %h2.bree.box.alignedleft Aligned left
+    / %h2.bree.box.alignedleftinside Aligned left, text inside
+    / %h2.bree.box.alignedleft90deg Aligned left, angle 90 deg
+    / %h2.bree.box.alignedleft90deginside Aligned left, text inside, angle 90 deg
+    / %h2.bree.box.alignedright Aligned right, text outside
+    / %h2.bree.box.alignedrightinside Aligned right, text inside
+    / %h2.bree.box.alignedright90deg Aligned right, text outside, angle 90 deg
+    / %h2.bree.box.alignedright90deginside Aligned right, text inside, angle 90 deg
+    / %h2.bree.box.normalskewed No alignment, rotationmode "skew"
+    / %h2.bree.box.normalstep No alignment, rotationmode "step"
+
+
+  / %canvas#canvas{:style => "margin-top: 100px", :width => "500", :height => "200"}
+
+  #result

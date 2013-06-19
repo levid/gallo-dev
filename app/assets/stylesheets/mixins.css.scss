@@ -1,0 +1,7 @@
+$main-color: #1E7B12;
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}

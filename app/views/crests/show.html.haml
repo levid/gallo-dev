@@ -1,0 +1,14 @@
+- title "Crest"
+
+.crest
+  = image_tag @crest.image_url(:thumb) if @crest.image?
+
+  .name
+    %strong Name:
+    = @crest.name
+
+  .actions
+    = link_to "Edit", edit_crest_path(@crest)
+    |
+    \#{link_to "Destroy", @crest, :confirm => 'Are you sure?', :method => :delete} |
+    \#{link_to "Back to Gallery", @crest.gallery}

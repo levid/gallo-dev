@@ -1,0 +1,46 @@
+#galleries_controller {
+  .new_gallery {
+    background-color: $main-color;
+    color: #FFF;
+    padding: 5px 12px;
+    margin: 10px 0;
+    font-size: 16px;
+    @include border-radius(5px);
+  }
+
+  .gallery {
+    border: solid 1px #777;
+    margin: 20px 0;
+    padding: 7px 12px;
+    @include border-radius(10px);
+  }
+
+  .gallery h2 {
+    margin: 0;
+  }
+}
+
+#crests {
+  padding: 20px 0px;
+}
+
+.crest + .crest {
+  margin: 0px 0px 0px 20px;
+}
+
+.crest {
+  padding: 10px;
+  display: inline-block;
+  border: 1px solid #eeeeee;
+  @include border-radius(10px);
+
+  .name {
+    padding: 10px 0px;
+    font-size: 16px;
+
+  }
+}
+
+.hide {
+  display: none;
+}

@@ -1,0 +1,24 @@
+
+!!!
+%html{:"ng-app" => 'Gallo'}
+  %head
+    %title= content_for?(:title) ? yield(:title) : "Untitled"
+    = stylesheet_link_tag "application", media: "all"
+    = csrf_meta_tag
+
+    = yield(:head)
+
+  %body{:id => "#{params[:controller].parameterize}_controller"}
+    #container
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"
+      = content_tag :h1, yield(:title) if show_title?
+
+      = yield
+
+    %script{:src => "//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"}
+    %script{:src => "//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-resource.min.js"}
+    %script{:src => "//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular-sanitize.min.js"}
+
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js", :async => true
+    = javascript_include_tag "application"

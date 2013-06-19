@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  font-family: verdana;
+  font-size: 14px;
+}
+
+#header {
+  background-color: $main-color;
+  color: #FFF;
+  padding: 4px 100px;
+  border-bottom: solid 5px darken($main-color, 10%);
+
+  h1 {
+    font-size: 30px;
+  }
+}
+
+a {
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: #eeeeee;
+  @include border-radius(10px);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+#container {
+  margin: 10px;
+}

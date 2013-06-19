@@ -1,0 +1,17 @@
+= form_for @crest, :html => {:multipart => true} do |f|
+  = f.error_messages
+  = f.hidden_field :gallery_id
+
+  = image_tag @crest.image_url(:thumb) if @crest.image?
+
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
+  %p
+    = f.file_field :image
+  %p
+    = f.label :remote_image_url, "or image URL"
+    %br/
+    = f.text_field :remote_image_url
+  %p= f.submit
