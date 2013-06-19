@@ -60,7 +60,7 @@ $("form#title-form input[type=submit]").on 'click', (e) =>
        # so that you can see the result as an image
       $.ajax(
         type: "post"
-        url: "#{window.location.href}convert"
+        url: "#{current_path}/convert"
         beforeSend: (xhr) ->
           xhr.setRequestHeader "X-CSRF-Token", $("meta[name=\"csrf-token\"]").attr("content")
         data:

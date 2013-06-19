@@ -40,3 +40,6 @@
   / %canvas#canvas{:style => "margin-top: 100px", :width => "500", :height => "200"}
 
   #result
+
+:javascript
+  window.current_path = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
