@@ -35,7 +35,7 @@ staging:
   host: localhost
 
 production:
-  adapter: mysql2
+  adapter: mysql
   database: gallo
   username: root
   password: $rdc#isaacw
