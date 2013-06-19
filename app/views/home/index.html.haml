@@ -9,9 +9,9 @@
     %input.btn.btn-inverse{:type => "Submit", :value => "Generate Crest"}
 
     / .addthis_toolbox.addthis_default_style
-    %a.addthis_button_pinterest_pinit
-    %a.addthis_button_facebook_send
-    %a.addthis_button_tweet{"tw:text" => "Gallo test", "tw:url" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "tw:image" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}crests/new_test.png"}
+    %a.addthis_button_pinterest_share
+    %a.addthis_button_facebook
+    %a.addthis_button_twitter
     %a.addthis_button_email
 
     %hr/
@@ -70,4 +70,14 @@
   var addthis_config = {"data_track_addressbar":true};
 
   window.current_path = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+
+  var addthis_share =
+  {
+  // ...
+      templates: {
+                     twitter: 'check out ' + window.current_path + 'crests/new_test.png' + ' (from @gallo)',
+                 }
+  }
+
+
 
