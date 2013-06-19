@@ -1,10 +1,24 @@
 
 !!!
-%html{:"ng-app" => 'Gallo'}
+%html{:"ng-app" => 'Gallo', "xmlns:fb" => "http://ogp.me/ns/fb#"}
   %head
     %title= content_for?(:title) ? yield(:title) : "Untitled"
     = stylesheet_link_tag "application", media: "all"
     = csrf_meta_tag
+
+    %meta{:property => "og:image", :content => "#{request.protocol}#{request.host_with_port}#{request.fullpath}crests/new_test.png"}/
+
+    / FB meta
+    %meta{:property => "og:url", :content => "http://test"}/
+    %meta{:property => "og:title", :content => "Gallo"}/
+    %meta{:property => "og:caption", :content => "Gallo"}/
+    %meta{:property => "og:description", :content => "Gallo"}/
+    %meta{:property => "og:determiner", :content => "auto"}/
+    / Twitter
+    %meta{:name => "twitter:card", :content => "summary"}/
+    %meta{:name => "twitter:url", :content => "http://test.com"}/
+    %meta{:name => "twitter:title", :content => "Gallo"}/
+    %meta{:name => "twitter:image", :content => "#{request.protocol}#{request.host_with_port}#{request.fullpath}crests/new_test.png"}/
 
     = yield(:head)
 

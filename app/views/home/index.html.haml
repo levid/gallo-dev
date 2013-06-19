@@ -4,8 +4,13 @@
 
     %input#myText{:"data-ng-model" => "myText", :placeholder => "Enter a name here", :type => "text"}/
     %input{:"data-ng-model" => "myText", :placeholder => "Enter a name here", :type => "text"}/
+    %br/
     / %input#puzzle{:type => "checkbox", :value => "puzzlize"} Puzzlize It?
-    %input{:type => "Submit", :value => "Generate Crest"}
+    %input.btn.btn-inverse{:type => "Submit", :value => "Generate Crest"}
+    %a.addthis_button_pinterest_pinit
+    %a.addthis_button_facebook_send
+    %a.addthis_button_tweet{"tw:text" => "Gallo test", "tw:url" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}", "tw:image" => "#{request.protocol}#{request.host_with_port}#{request.fullpath}crests/new_test.png"}
+    %a.addthis_button_email
 
     %hr/
 
@@ -41,5 +46,26 @@
 
   #result
 
+/ AddThis Button BEGIN
+/ .addthis_toolbox.addthis_default_style
+/   %a.addthis_button_facebook_like{"fb:like:layout" => "button_count"}
+/   %a.addthis_button_tweet
+/   %a.addthis_button_pinterest_pinit
+/   %a.addthis_counter.addthis_pill_style
+/ AddThis Button END
+
+
+%script{:src => "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51b951986d91fc0d", :type => "text/javascript"}
+%script{:src => 'http://connect.facebook.net/en_US/all.js'}
+
 :javascript
+  FB.init({
+    appId: '608844989133669',
+    status: true,
+    cookie: true
+  });
+
+  var addthis_config = {"data_track_addressbar":true};
+
   window.current_path = "#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+
