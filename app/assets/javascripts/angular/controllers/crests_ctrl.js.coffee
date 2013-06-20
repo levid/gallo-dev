@@ -260,16 +260,20 @@ App.controller 'CrestsCtrl', ['$scope', ($scope) ->
   # Center text using: http://jsfiddle.net/sEtzy/
 
   svg =  """
-    M94.732,599.985c358.711,112.572,717.426-112.575,1076.139,0
+    M148.319,959.261c-29.369-66.689-45.675-140.429-45.675-217.976
+c0-298.988,242.376-541.364,541.363-541.364c298.987,0,541.363,242.376,541.363,541.364c0,82.877-18.623,161.404-51.914,231.625
   """
 
   textpath = new Kinetic.MyTextPath(
-    x: -250
+    x: 0
     y: 0
+    width: 1000
+    height: 1000
     fill: "#333"
     fontSize: "40"
     fontFamily: 'Bree Serif'
     text: $("#myText").val()
+    offset: [150, 0]
     id: 'textLayer'
     data: svg # http://mobile.tutsplus.com/tutorials/iphone/using-svg-illustrator-to-create-curvy-text/
     # data: "M21.999,173.666c0,0,74.466-70,227.191-70c152.726,0,228.141,70,228.141,70" # http://mobile.tutsplus.com/tutorials/iphone/using-svg-illustrator-to-create-curvy-text/
@@ -278,35 +282,11 @@ App.controller 'CrestsCtrl', ['$scope', ($scope) ->
   layer.add textpath
   stage.add layer
 
-  layer2 = new Kinetic.Layer()
-
-  svg =  """
-    M317.354,919.568c-19.516-42.289-31.155-89.059-32.979-138.508
-    c-7.382-200.178,148.91-368.439,349.088-375.82c200.182-7.383,368.442,148.912,375.822,349.09
-    c1.853,50.244-6.604,98.479-23.48,142.658
-  """
-
-  textpath2 = new Kinetic.MyTextPath(
-    x: 0
-    y: 0
-    fill: "#333"
-    fontSize: "40"
-    fontFamily: 'Bree Serif'
-    text: $("#myText").val()
-    id: 'textLayer'
-    data: svg # http://mobile.tutsplus.com/tutorials/iphone/using-svg-illustrator-to-create-curvy-text/
-    # data: "M21.999,173.666c0,0,74.466-70,227.191-70c152.726,0,228.141,70,228.141,70" # http://mobile.tutsplus.com/tutorials/iphone/using-svg-illustrator-to-create-curvy-text/
-  )
-  # layer.destroy()
-  layer2.add textpath2
-  stage.add layer2
-
   $scope.updateText = (value) ->
     $('.kineticjs-content').show()
     $('#crestImage').show()
     $(".hidden-container").hide()
     textpath.setText value
-    textpath2.setText value
     stage.draw()
 
   window.generateKineticSVG = (text) =>

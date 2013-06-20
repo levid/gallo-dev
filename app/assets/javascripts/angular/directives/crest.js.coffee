@@ -7,7 +7,8 @@ angular.module("ui-crest", []).directive("crestText", ->
     # watch to notify us when the value changes
     scope.$watch attrs.myText, (value) ->
 
-      scope.updateText value
+      if value.length < 37
+        scope.updateText value
 
       # normal =
       #   path:
@@ -20,13 +21,13 @@ angular.module("ui-crest", []).directive("crestText", ->
       # window.generateKineticSVG(value)
 )
 
-angular.module('ui-onkeyup', []).directive "onKeyUp", ->
-  restrict: "EAC"
-  link: (scope, elm, attrs) ->
-    # elm.bind "keyup", () ->
-    #   scope.$apply(attrs.onKeyUp)
-    keyupFn = scope.$eval(attrs.onKeyUp)
-    elm.bind "keyup", (evt) ->
-      scope.$apply(->
-        keyupFn.call(scope, evt.which)
-      )
+# angular.module('ui-onkeyup', []).directive "onKeyUp", ->
+#   restrict: "EAC"
+#   link: (scope, elm, attrs) ->
+#     # elm.bind "keyup", () ->
+#     #   scope.$apply(attrs.onKeyUp)
+#     keyupFn = scope.$eval(attrs.onKeyUp)
+#     elm.bind "keyup", (evt) ->
+#       scope.$apply(->
+#         keyupFn.call(scope, evt.which)
+#       )

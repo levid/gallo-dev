@@ -1,3 +1,3 @@
 'use strict';
 
-window.App = angular.module('Gallo', ['ngResource', 'ui-crest', 'ui-infinite-scroll', 'ui-onkeyup'])
+window.App = angular.module('Gallo', ['ngResource', 'ui-crest', 'ui-infinite-scroll'])
