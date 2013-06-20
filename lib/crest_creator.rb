@@ -121,7 +121,7 @@ class CrestCreator
         # }
         # @text_layer.gravity = NorthGravity
         # @text_layer.geometry = "#{@cols}x#{@rows}"
-        composite[index+1] = composite[index].composite(@text_layer, Magick::CenterGravity, 200, 65, Magick::OverCompositeOp)
+        composite[index+1] = composite[index].composite(@text_layer, Magick::CenterGravity, 0, 20, Magick::OverCompositeOp)
       end
     end
     composite[composite.size-1]
