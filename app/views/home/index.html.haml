@@ -2,7 +2,7 @@
   %form#title-form
     %label
       Title:
-      {{myText}}
+      %span{:"ng:bind" => "myText"}
 
     %input#myText{:"data-ng-model" => "myText", :placeholder => "Enter a name here", :type => "text", :autofocus => ''}/
     / %input#textVal{:"data-ng-model" => "myText", :placeholder => "Enter a name here", :type => "text", :value => 'this is centered text !'}/
