@@ -14,16 +14,16 @@
 
 # If the press is finished and we still have focus on the radio or checkbox inputs then
 # trigger a click event which will do the rest. Focus all other input types.
-$("#title-form label").on("click", (event) ->
+$(document).on("click", ".kineticjs-content", (event) ->
   input = $("#myText")
   input.focus() if input.is("[type=text]")
-).on("touchstart", (event) ->
+).on("touchstart", ".kineticjs-content", (event) ->
   input = $("#myText")
   input.focus() if input.is("[type=text]")
-).on("touchmove", (event) ->
+).on("touchmove", ".kineticjs-content", (event) ->
   input = $("#myText")
   input.blur()  if input.is("[type=text]")
-).on "touchend", (event) ->
+).on "touchend", ".kineticjs-content", (event) ->
   input = $("#myText")
   if input.is("[type=text]")
     if input.is(":focus")
