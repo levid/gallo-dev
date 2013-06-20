@@ -14,16 +14,16 @@
 
 # If the press is finished and we still have focus on the radio or checkbox inputs then
 # trigger a click event which will do the rest. Focus all other input types.
-$(document).on("click", "#title-form label", (event) ->
+$("#title-form label").on("click", (event) ->
   input = $("#myText")
   input.focus() if input.is("[type=text]")
-).on("touchstart", "#title-form label", (event) ->
+).on("touchstart", (event) ->
   input = $("#myText")
   input.focus() if input.is("[type=text]")
-).on("touchmove", "#title-form label", (event) ->
+).on("touchmove", (event) ->
   input = $("#myText")
   input.blur()  if input.is("[type=text]")
-).on "touchend", "#title-form label", (event) ->
+).on "touchend", (event) ->
   input = $("#myText")
   if input.is("[type=text]")
     if input.is(":focus")
