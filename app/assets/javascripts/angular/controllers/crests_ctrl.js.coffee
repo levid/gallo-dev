@@ -249,8 +249,8 @@ App.controller 'CrestsCtrl', ['$scope', ($scope) ->
 
   stage = new Kinetic.Stage(
     container: "container"
-    width: 900
-    height: 900
+    width: 1000
+    height: 1000
   )
 
   $scope.stage = stage
@@ -259,10 +259,12 @@ App.controller 'CrestsCtrl', ['$scope', ($scope) ->
 
   # Center text using: http://jsfiddle.net/sEtzy/
 
-  svg =  "M21.999,173.666c0,0,74.466-70,227.191-70c152.726,0,228.141,70,228.141,70"
+  svg =  """
+    M94.732,599.985c358.711,112.572,717.426-112.575,1076.139,0
+  """
 
   textpath = new Kinetic.MyTextPath(
-    x: 0
+    x: -250
     y: 0
     fill: "#333"
     fontSize: "40"
@@ -276,11 +278,35 @@ App.controller 'CrestsCtrl', ['$scope', ($scope) ->
   layer.add textpath
   stage.add layer
 
+  layer2 = new Kinetic.Layer()
+
+  svg =  """
+    M317.354,919.568c-19.516-42.289-31.155-89.059-32.979-138.508
+    c-7.382-200.178,148.91-368.439,349.088-375.82c200.182-7.383,368.442,148.912,375.822,349.09
+    c1.853,50.244-6.604,98.479-23.48,142.658
+  """
+
+  textpath2 = new Kinetic.MyTextPath(
+    x: 0
+    y: 0
+    fill: "#333"
+    fontSize: "40"
+    fontFamily: 'Bree Serif'
+    text: $("#myText").val()
+    id: 'textLayer'
+    data: svg # http://mobile.tutsplus.com/tutorials/iphone/using-svg-illustrator-to-create-curvy-text/
+    # data: "M21.999,173.666c0,0,74.466-70,227.191-70c152.726,0,228.141,70,228.141,70" # http://mobile.tutsplus.com/tutorials/iphone/using-svg-illustrator-to-create-curvy-text/
+  )
+  # layer.destroy()
+  layer2.add textpath2
+  stage.add layer2
+
   $scope.updateText = (value) ->
     $('.kineticjs-content').show()
     $('#crestImage').show()
     $(".hidden-container").hide()
     textpath.setText value
+    textpath2.setText value
     stage.draw()
 
   window.generateKineticSVG = (text) =>

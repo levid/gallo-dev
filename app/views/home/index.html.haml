@@ -3,7 +3,7 @@
     %label Title:
 
     %input#myText{:"data-ng-model" => "myText", :placeholder => "Enter a name here", :type => "text", :autofocus => ''}/
-    %input{:"data-ng-model" => "myText", :placeholder => "Enter a name here", :type => "text"}/
+    %input#textVal{:"data-ng-model" => "myText", :placeholder => "Enter a name here", :type => "text", :value => 'this is centered text !'}/
     %br/
     / %input#puzzle{:type => "checkbox", :value => "puzzlize"} Puzzlize It?
     %input.btn.btn-inverse{:type => "Submit", :value => "Generate Crest"}
